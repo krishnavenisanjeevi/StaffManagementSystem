@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/adminstyle.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="nav_bar">
+      <h1>Admin Dashboard</h1>
+      <div
+        style="display: flex; gap: 30px; padding-top: 30px; font-weight: bolder"
+      >
+        <a href="{% url 'view_leaves' %}">View Leave Request</a>
+        <a href="{% url 'logout'%}">Logout</a>
+      </div>
+    </nav>
+    <div style="display: flex; margin: 60px auto">
+      <div class="card">
+        <h3>Total Leave Requests</h3>
+        <p>Manage all staff leave applications</p>
+        <a href="{% url 'view_leaves' %}">Open</a>
+      </div>
+      <div class="card">
+        <h3>Staff Management</h3>
+        <p>View Registed staff users</p>
+        <a href="{% url 'manage_staff' %}">Manage staff</a>
+      </div>
+    </div>
+  </body>
+</html>

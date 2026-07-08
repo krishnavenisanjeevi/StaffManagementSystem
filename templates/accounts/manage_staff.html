@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/managestaff.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="nav_bar">
+      <h1>Manage staff</h1>
+    </nav>
+    <div class="container">
+      <p style="text-align: center; font-size: 25px">
+        <a href="{% url 'add_staff'%}">Add staff</a>
+      </p>
+      <table border="2" class="staff_table">
+        <tr>
+          <th style="text-align: center">Username</th>
+          <th style="text-align: center">Actions</th>
+        </tr>
+        {% for staff in staff_list %}
+        <tr>
+          <td style="padding-left: 15px">{{staff.username}}</td>
+          <td style="padding-left: 15px">
+            <a href="{% url 'edit_staff' staff.id %}">
+              <button class="edit_btn">Edit</button></a
+            >
+            <a
+              href="{% url 'delete_staff' staff.id %}"
+              onclick="return confirm('Are you sure?');"
+            >
+              <button class="delete_btn">Delete</button></a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <p style="text-align: center">
+      <a href="{% url 'admin_dashboard' %}">Back to admin dashboard </a>
+    </p>
+  </body>
+</html>

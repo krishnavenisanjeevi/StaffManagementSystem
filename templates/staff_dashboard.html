@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/adminstyle.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="nav_bar">
+    <h1>Staff - SLMS</h1>
+    <h3 style="padding-top: 10px;">
+    <a href="{% url 'logout'%}">Logout</a>
+    </h3>
+    </nav>
+   <div class="main">
+    <h3 style="text-align: center;"> Welcome, {{request.user.username}}</h3>
+
+    <div style="display: flex; margin: 60px auto">
+
+    <div class="card">
+    <h3>Apply Leave</h3>
+    <p>Submit a new leave request</p>
+      <a href="{% url 'apply_leave' %}">apply</a>
+    </div>
+    <div class="card">
+    <h3>My leave status</h3>
+      <p>View your leave request</p>
+      <a href="{% url 'my_leaves' %}">view</a>
+    </div>
+   </div>   
+   </div>
+    
+
+    </p>
+  </body>
+</html>

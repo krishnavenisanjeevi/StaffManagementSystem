@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" />
+    <title>Register | SLMS</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>SLMS Registration</h1>
+      <h2>Staff Leave Management System</h2>
+      <form action="" method="post" class="register-form">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" required />
+        <br />
+        <br />
+        <label>Password</label>
+        <input type="password" name="password" required />
+        <br />
+        <br />
+        <label for="">Role</label>
+        <select name="role" required class="custom-select">
+          <option value="">--select option--</option>
+          <option value="admin">Admin</option>
+          <option value="staff">Staff</option>
+        </select>
+        <br />
+        <br />
+        <p>Admin can manage staff and approve leave requests</p>
+        <br />
+        <button type="submit">Register</button>
+        <br />
+        <br />
+        <p style="text-align: center">
+          <a href="{% url 'home' %}">back to home</a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

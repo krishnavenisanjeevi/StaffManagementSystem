@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Edit Staff</h1>
+      <form method="POST" class="register-form">
+        {% csrf_token %}
+         <label>Username</label>
+        <input
+          type="text"
+          name="username"
+          value="{{staff.username}}"
+          required
+        />
+        <br />
+        <br />
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Leave blank to keep current password"
+        />
+        <br />
+        <br />
+        <button type="submit">Update Staff</button>
+      </form>
+      <p style="text-align: center; margin-top: 10px">
+        <a href="{% url 'manage_staff' %}">Back to Manage Staff</a>
+      </p>
+    </div>
+  </body>
+</html>
