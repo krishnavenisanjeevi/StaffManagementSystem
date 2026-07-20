@@ -156,10 +156,7 @@ http://127.0.0.1:8000/admin/
 - Leave Balance Calculation
 - Calendar View
 - Role-Based Authentication
-- PDF Leave Reports
-- Export to Excel
-- Attendance Management
-- Multi-Level Leave Approval
+
 
 ---
 
