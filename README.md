@@ -27,10 +27,12 @@ Below are the key interfaces captured from the production build:
 
 1. User Registration (`Admin` / `Staff`)
    Users can choose their appropriate role from a dynamic dropdown menu during sign-up.
-   ![Registeration Page](<Screenshot (1370).png>)
+  <img width="2880" height="1800" alt="Mainpage" src="https://github.com/user-attachments/assets/2f930559-faa3-461c-950f-406a983222d8" />
+
 2. Administrator Central Dashboard
    Provides quick access navigations to manage staff registers or review incoming employee requests.
-   ![Admin Dashboard](<Screenshot (1371).png>)
+  <img width="2880" height="1800" alt="Registationpage" src="https://github.com/user-attachments/assets/e8b4696f-dfd6-4682-8a1e-3e0d8b0fad2f" />
+
 3. Employee Directory Management
    An interactive table view that enables administrators to rapidly modify or delete staff records.
    ![Manage Staff Table](<Screenshot (1373).png>)
