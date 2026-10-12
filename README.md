@@ -36,10 +36,12 @@ Below are the key interfaces captured from the production build:
 
 3. Employee Directory Management
    An interactive table view that enables administrators to rapidly modify or delete staff records.
-   ![Manage Staff Table](<Screenshot (1373).png>)
+  <img width="2880" height="1800" alt="Screenshot (1505)" src="https://github.com/user-attachments/assets/feaaaae7-2021-40cc-a25a-634039c77e3b" />
+
 4. Record Update Form
    Allows an administrator to modify profile credentials such as usernames and encrypted passwords.
-   ![Edit Staff Screen](<Screenshot (1374).png>)
+  <img width="2880" height="1800" alt="Screenshot (1506)" src="https://github.com/user-attachments/assets/170cefd5-5600-4bd4-9899-ea24beb4622b" />
+
 5. Staff Leave Requests Tracker
    The central hub where incoming leaves are reviewed, tracked, and structurally managed through approval actions.
  <img width="2880" height="1800" alt="Leaverequest" src="https://github.com/user-attachments/assets/98cfe164-3ed2-4b0b-90ce-b6974df6dd6a" />
