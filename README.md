@@ -46,14 +46,21 @@ Below are the key interfaces captured from the production build:
 🔌 System API & View Endpoints
 The project maps standard CRUD paths to manage staff users and application statuses:
 Method Endpoint Pattern Description Access Control
-GET / POST `/register/` Renders and processes the user registration form Public
-GET `/admin_dashboard/` Core workspace landing page for administrative stats Admin Only
-GET `/manage_staff/` Lists all registered workspace staff employees Admin Only
-GET / POST `/edit_staff/<int:id>/` Fetches edit forms or updates a specific staff profile Admin Only
-POST / DELETE `/delete_staff/<int:id>/` Deletes a target staff user from the system Admin Only
-GET `/leave/view/` Tabulates all staff leave applications and current statuses Authenticated
-POST `/leave/action/<int:id>/<str:status>/` Updates leave request status (`Approved`/`Rejected`) Admin Only
-POST `/logout/` Terminates session cookie and safely redirects user Authenticated
+## System API & View Endpoints
+
+The project maps standard CRUD paths to manage staff users and leave application statuses.
+
+| Method | Endpoint | Description | Access Control |
+|---|---|---|---|
+| GET / POST | `/register/` | Renders and processes the user registration form | Public |
+| GET | `/admin_dashboard/` | Displays the administrative dashboard and statistics | Admin Only |
+| GET | `/manage_staff/` | Lists all registered staff employees | Admin Only |
+| GET / POST | `/edit_staff/<int:id>/` | Displays the edit form or updates a staff profile | Admin Only |
+| POST | `/delete_staff/<int:id>/` | Deletes a selected staff user | Admin Only |
+| GET | `/leave/view/` | Displays staff leave applications and their current statuses | Authenticated |
+| POST | `/leave/action/<int:id>/<str:status>/` | Updates a leave request status to Approved or Rejected | Admin Only |
+| POST | `/logout/` | Logs out the user and redirects to the appropriate page | Authenticated |
+
 
 ---
 
