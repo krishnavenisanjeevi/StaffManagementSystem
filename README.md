@@ -1,188 +1,92 @@
-# Staff Leave Management System
-
-A web-based Staff Leave Management System built with Django that helps organizations manage employee leave requests efficiently. The system allows employees to apply for leave online, while administrators can review, approve, or reject requests through an easy-to-use dashboard.
-
----
-
-## Features
-
-### Admin
-- Admin Login
-- Dashboard with leave statistics
-- Add, Update, Delete Employees
-- Manage Departments
-- View all leave requests
-- Approve or Reject leave applications
-- Track leave history
-- Search employees and leave records
-
-### Employee
-- Secure Login
-- View Personal Dashboard
-- Apply for Leave
-- View Leave Status
-- Check Leave History
-- Update Profile
-- Change Password
+Staff Leave Management System (SLMS)
+A robust and secure Django-based web application designed to automate, streamline, and manage employee leave registration and approval workflows.
 
 ---
 
-## Technologies Used
-
-- Python 3.x
-- Django
-- HTML5
-- CSS3
-- SQLite (Default Database)
-- Django ORM
+🛠️ Tech Stack & Prerequisites
+Backend Framework: Django (Python)
+Database: SQLite (Default)
+Frontend: HTML5, CSS3 (Bootstrap / Tailwind styled UI)
+Environment: Python 3.8+
 
 ---
 
-## Database Models
-
-### Employee
-- Employee ID
-- Full Name
-- Email
-- Department
-- Designation
-- Phone Number
-
-### Department
-- Department Name
-- Description
-
-### Leave Request
-- Employee
-- Leave Type
-- Start Date
-- End Date
-- Reason
-- Status (Pending / Approved / Rejected)
-- Applied Date
+🚀 System Features
+🔹 Admin Features
+Dashboard Insights: Track real-time counts of pending, approved, and rejected leave requests.
+Staff Management: Exhaustively register, edit credentials, or remove staff members from the workspace.
+Request Lifecycle Control: Review submitted employee leaves with explicit `Approved` or `Rejected` actions.
+🔹 Staff Features
+Secure Registration: Register individual employee accounts with dedicated `Staff` roles.
+Leave Application Tracking: Submit leaves with custom fields (Leave Type, Dates, Reason) and view real-time status updates.
 
 ---
 
-## Installation
+🖥️ Screen Mockups & UI Workflow
+Below are the key interfaces captured from the production build:
 
-### Clone the Repository
+1. User Registration (`Admin` / `Staff`)
+   Users can choose their appropriate role from a dynamic dropdown menu during sign-up.
+   ![Registeration Page](<Screenshot (1370).png>)
+2. Administrator Central Dashboard
+   Provides quick access navigations to manage staff registers or review incoming employee requests.
+   ![Admin Dashboard](<Screenshot (1371).png>)
+3. Employee Directory Management
+   An interactive table view that enables administrators to rapidly modify or delete staff records.
+   ![Manage Staff Table](<Screenshot (1373).png>)
+4. Record Update Form
+   Allows an administrator to modify profile credentials such as usernames and encrypted passwords.
+   ![Edit Staff Screen](<Screenshot (1374).png>)
+5. Staff Leave Requests Tracker
+   The central hub where incoming leaves are reviewed, tracked, and structurally managed through approval actions.
+   ![Staff Leave Requests](<Screenshot (1372).png>)
+
+---
+
+🔌 System API & View Endpoints
+The project maps standard CRUD paths to manage staff users and application statuses:
+Method Endpoint Pattern Description Access Control
+GET / POST `/register/` Renders and processes the user registration form Public
+GET `/admin_dashboard/` Core workspace landing page for administrative stats Admin Only
+GET `/manage_staff/` Lists all registered workspace staff employees Admin Only
+GET / POST `/edit_staff/<int:id>/` Fetches edit forms or updates a specific staff profile Admin Only
+POST / DELETE `/delete_staff/<int:id>/` Deletes a target staff user from the system Admin Only
+GET `/leave/view/` Tabulates all staff leave applications and current statuses Authenticated
+POST `/leave/action/<int:id>/<str:status>/` Updates leave request status (`Approved`/`Rejected`) Admin Only
+POST `/logout/` Terminates session cookie and safely redirects user Authenticated
+
+---
+
+⚡ Installation & Quick Start
+
+1. Clone & Set Up Virtual Environment
 
 ```bash
-git clone https://github.com/yourusername/staff-leave-management.git
-```
+git clone https://github.com/yourusername/slms.git
+cd slms
 
-### Navigate to Project
-
-```bash
-cd staff-leave-management
-```
-
-### Create Virtual Environment
-
-Windows
-
-```bash
+# Create environment
 python -m venv venv
+source venv/bin/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-Activate
+2. Install Project Requirements
 
 ```bash
-venv\Scripts\activate
+pip install django
 ```
 
-Linux/Mac
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Apply Migrations
+3. Run Database Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### Create Superuser
-
-```bash
-python manage.py createsuperuser
-```
-
-### Run Server
+4. Boot Up Local Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Visit:
-
-```
-http://127.0.0.1:8000/
-```
-
-Admin Panel:
-
-```
-http://127.0.0.1:8000/admin/
-```
-
----
-
-## Screenshots
-
-- Login Page
-- Admin Dashboard
-- Employee Dashboard
-- Apply Leave Page
-- Leave Request List
-- Leave Approval Page
-
-(Add screenshots here)
-
----
-
-## Future Enhancements
-
-- Email Notifications
-- Leave Balance Calculation
-- Calendar View
-- Role-Based Authentication
-
-
----
-
-## Learning Outcomes
-
-- Django Authentication
-- Django ORM
-- CRUD Operations
-- Model Relationships
-- Forms & Validation
-- Admin Customization
-- Bootstrap UI
-- Session Management
-- Role-Based Access Control
-
----
-
-## Author
-
-**Krishna Sanjeevi**
-
-- Python Full Stack Developer
-- Django | React | Flutter Developer
-
----
-
-## License
-
-This project is developed for educational and learning purposes.
+Visit the local server environment at http://127.0.0.1:8000/ inside your browser.
